@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "logo": " https://i.ibb.co/mJm6vnj/chip-1.png",
+      "name": "Software Development",
+      "jobsAvailable": 105
+    },
+    {
+      "id": 2,
+      "logo": "https://i.ibb.co/n3sZ1K7/social-media-1.png",
+      "name": "Marketing & Sales",
+      "jobsAvailable": 60
+    },
+    {
+      "id": 3,
+      "logo": "https://i.ibb.co/6tFVdG8/accounts-1.png",
+      "name": "Account & Finance",
+      "jobsAvailable": 78
+    },
+    {
+      "id": 4,
+      "logo": "https://i.ibb.co/S74KDKD/Frame-1.png",
+      "name": "Creative Design",
+      "jobsAvailable": 32
+    }
+  ]
+ 
