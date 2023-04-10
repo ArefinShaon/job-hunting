@@ -9,7 +9,6 @@ const CategoryList = ({ data }) => {
         <figure className=" p-6 mr-16">
           <img
             src={logo}
-         
           />
         </figure>
         <div className="card-body items-center text-center">

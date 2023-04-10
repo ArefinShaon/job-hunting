@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Header.css";
+
 const Header = () => {
   return (
     <div>
@@ -42,7 +42,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl font-bold">FIND YOUR JOB</a>
+          <a className="btn btn-ghost normal-case text-xl font-bold">JOB FINDER</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
