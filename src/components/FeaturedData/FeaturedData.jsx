@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 
 const FeaturedData = ({ data }) => {
   const {
@@ -9,9 +10,9 @@ const FeaturedData = ({ data }) => {
     job_title,
     company_name,
     location,
-      remote_or_onsite,
-      fulltime_or_parttime,
-      salary
+    remote_or_onsite,
+    fulltime_or_parttime,
+    salary
   } = data;
   return (
     <div>
@@ -22,18 +23,20 @@ const FeaturedData = ({ data }) => {
           />
         </figure>
         <div className="card-body">
-                  <h2 className="card-title font-bold">{job_title}</h2>
-                  <p className="font-medium text-start	">{company_name}</p>
-                  <div className="flex gap-12 w-64">
-                      <p className="outline outline-primary rounded text-primary">{remote_or_onsite }</p>
-                      <p className="outline outline-primary rounded text-primary">{ fulltime_or_parttime}</p>
-                  </div>
-                  <div className="flex md:gap-8 md:w-96">
-                      <p><FontAwesomeIcon icon={faLocationDot} /> {location}</p>
-                      <p>Salary: {salary}</p>
-                  </div>
+          <h2 className="card-title font-bold">{job_title}</h2>
+          <p className="font-medium text-start">{company_name}</p>
+          <div className="flex gap-12 w-64">
+            <p className="outline outline-primary rounded text-primary">{remote_or_onsite }</p>
+            <p className="outline outline-primary rounded text-primary">{ fulltime_or_parttime}</p>
+          </div>
+          <div className="flex md:gap-8 md:w-96">
+            <p><FontAwesomeIcon icon={faLocationDot} /> {location}</p>
+            <p>Salary: {salary}</p>
+          </div>
           <div className="card-actions mt-6">
-            <button className="btn btn-primary">View Details</button>
+            <button className="btn btn-primary">
+            <Link to={`/details/${id}`}>View Details</Link>
+            </button>
           </div>
         </div>
       </div>
