@@ -1,5 +1,5 @@
 import React from 'react';
-import bannerImg from '../../assets/All Images/Vector-1.png';
+
 
 const JobBanner = () => {
    
