@@ -18,6 +18,16 @@ const JobDetails = () => {
 
   const handleApplyNowClick = () => {
     const savedJobs = JSON.parse(localStorage.getItem("jobs")) || [];
+  
+    
+    const jobAlreadySaved = savedJobs.some((savedJob) => savedJob.id === job.id);
+  
+    if (jobAlreadySaved) {
+      alert("You have already applied for this job!");
+      return;
+    }
+  
+    
     savedJobs.push(job);
     localStorage.setItem("jobs", JSON.stringify(savedJobs));
     alert("Job applied successfully!");

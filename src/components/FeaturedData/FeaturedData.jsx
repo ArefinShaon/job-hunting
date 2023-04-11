@@ -35,9 +35,7 @@ const FeaturedData = ({ data }) => {
           </div>
           
           <div className="card-actions mt-6">
-            <button className="btn btn-primary">
-            <Link to={`/details/${id}`}>View Details</Link>
-            </button>
+          <Link className="btn btn-primary" to={`/details/${id}`}>View Details</Link>
           </div>
         </div>
       </div>
