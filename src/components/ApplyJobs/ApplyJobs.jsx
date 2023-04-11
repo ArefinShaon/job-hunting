@@ -23,7 +23,7 @@ const ApplyJob = () => {
   return (
     <div>
       <ApplyBanner></ApplyBanner>
-      <div className="dropdown ms-96 ps-96 mt-12">
+      <div className="dropdown md:ms-96 md:ps-96 mt-12">
         <label tabIndex={0} className="btn m-1">
           Filter By
         </label>

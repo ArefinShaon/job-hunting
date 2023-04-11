@@ -8,7 +8,7 @@ const JobDetails = () => {
 
   useEffect(() => {
     const fetchJobDetails = async () => {
-      const response = await fetch("../../../public/featuredData.json");
+      const response = await fetch('/featuredData.json');
       const jobs = await response.json();
       setJobs(jobs);
     };

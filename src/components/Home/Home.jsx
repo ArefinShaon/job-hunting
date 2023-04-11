@@ -4,13 +4,14 @@ import { useLoaderData } from "react-router-dom";
 import CategoryList from "../CategoryList/CategoryList";
 import FeaturedData from "../FeaturedData/FeaturedData";
 
+
 const Home = () => {
   const categoryData = useLoaderData();
   const [featuredData, setFeaturedData] = useState([]);
   const [displayedData, setDisplayedData] = useState([]);
 
   useEffect(() => {
-    fetch("../../../public/featuredData.json")
+    fetch('/featuredData.json')
       .then((response) => response.json())
       .then((data) => setFeaturedData(data));
   }, []);
@@ -42,7 +43,7 @@ const Home = () => {
               <h2 className="text-4xl font-bold py-6">Featured Jobs</h2>
               <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
         <div className="sm:mx-16 md:grid grid-cols-2 gap-4 mt-6">
-          {displayedData.map((data) => (
+          {displayedData.map?.((data) => (
             <FeaturedData key={data.id} data={data}></FeaturedData>
           ))}
         </div>
