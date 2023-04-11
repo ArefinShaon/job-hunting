@@ -33,6 +33,7 @@ const FeaturedData = ({ data }) => {
             <p><FontAwesomeIcon icon={faLocationDot} /> {location}</p>
             <p>Salary: {salary}</p>
           </div>
+          
           <div className="card-actions mt-6">
             <button className="btn btn-primary">
             <Link to={`/details/${id}`}>View Details</Link>
