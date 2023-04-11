@@ -1,33 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import JobBanner from "../JobBanner/JobBanner";
 
 const JobDetails = () => {
-  const [job, setJob] = useState(null);
+  const [jobs, setJobs] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
     const fetchJobDetails = async () => {
       const response = await fetch("../../../public/featuredData.json");
       const jobs = await response.json();
-      const foundJob = jobs.find((job) => job.id === id);
-      setJob(foundJob);
+      setJobs(jobs);
     };
 
     fetchJobDetails();
-  }, [id]);
+  }, []);
 
   const handleApplyNowClick = () => {
-   localStorage.setItem("job", JSON.stringify(job));
+    const savedJobs = JSON.parse(localStorage.getItem("jobs")) || [];
+    savedJobs.push(job);
+    localStorage.setItem("jobs", JSON.stringify(savedJobs));
     alert("Job applied successfully!");
   };
+
+  const job = jobs.find((job) => job.id === id);
 
   return (
     <div>
       {job ? (
         <div>
-          <div className="bg-base-200 h-48">
-            <h2 className="text-4xl font-bold pt-12">Job Details</h2>
-          </div>
+          <JobBanner></JobBanner>
           <div className="md:flex mt-24 gap-12 ">
             <div className=" md:w-9/12 px-12 text-start">
               <p>
@@ -59,9 +61,14 @@ const JobDetails = () => {
                 <hr />
                 <p className="py-2">Phone:{job.contact_information.phone}</p>
                 <p>Email:{job.contact_information.email}</p>
-                <p className="py-2">Address:{job.contact_information.address}</p>
+                <p className="py-2">
+                  Address:{job.contact_information.address}
+                </p>
               </div>
-              <button className="btn-primary mt-6 mb-6" onClick={handleApplyNowClick}>
+              <button
+                className="btn-primary mt-6 mb-6"
+                onClick={() => handleApplyNowClick(job.id)}
+              >
                 Apply Now
               </button>
             </div>

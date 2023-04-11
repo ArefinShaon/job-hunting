@@ -33,7 +33,7 @@ const Home = () => {
           need. Its your future
         </p>
         <div className="sm:mx-16 md:grid grid-cols-4 gap-4 mt-6">
-          {categoryData.map((data) => (
+          {categoryData.map ?.((data) => (
             <CategoryList key={data.id} data={data}></CategoryList>
           ))}
         </div>

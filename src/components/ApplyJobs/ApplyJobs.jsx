@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import ApplyBanner from "../ApplyBanner/ApplyBanner";
 
-const AppliedJobs = () => {
-  const [appliedJobs, setAppliedJobs] = useState([]);
-
-  useEffect(() => {
-    const storedJobs = localStorage.getItem("job");
-    if (storedJobs) {
-      setAppliedJobs(JSON.parse(storedJobs));
-    }
-  }, []);
+const ApplyJob = () => {
+  const [savedJobs, setSavedJobs] = useState(
+    JSON.parse(localStorage.getItem("jobs")) || []
+  );
 
   return (
     <div>
-      <h2>Applied Jobs</h2>
-      {appliedJobs.length > 0 ? (
+      <ApplyBanner></ApplyBanner>
+      <div>
+      {savedJobs.length > 0 ? (
         <ul>
-          {appliedJobs.map((job) => (
+          {savedJobs.map((job) => (
             <li key={job.id}>
               <h3>{job.job_title}</h3>
               <p>{job.company_name}</p>
@@ -24,10 +21,11 @@ const AppliedJobs = () => {
           ))}
         </ul>
       ) : (
-        <p>No jobs applied yet!</p>
+        <p>No saved jobs.</p>
       )}
+      </div>
     </div>
   );
 };
 
-export default AppliedJobs;
+export default ApplyJob;
